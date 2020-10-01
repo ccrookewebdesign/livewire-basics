@@ -8,11 +8,8 @@
             <img src="{{ Storage::url($post->photo) }}" alt="cover photo">
         </div>
     @endif
-    <div class="mt-8">
+    <div class="my-8">
         {{ $post->content }}
-        <div class="h-96 mt-8">Scroll down for comments...</div>
-        <div class="h-96"></div>
-        <div class="h-96"></div>
     </div>
 
     <hr>

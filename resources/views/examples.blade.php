@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
+    {{--<div>
         <div class="h-96">Scroll down...</div>
         <div class="h-96"></div>
-    </div>
+    </div>--}}
 
-    <h2 class="text-lg font-semibold">Standard Contact Form</h2>
+    {{--<h2 class="text-lg font-semibold">Standard Contact Form</h2>
 
     <livewire:contact-form />
 
-    <hr>
+    <hr>--}}
 
-    <h2 class="text-lg font-semibold mt-4">Livewire Search Dropdown</h2>
+    {{--<h2 class="text-lg font-semibold mt-4">Livewire Search Dropdown</h2>
 
     <div class="my-8">
         <nav class="bg-white shadow">
@@ -44,7 +44,7 @@
                             </a>
                         </div>
                     </div>
-                    <livewire:search-dropdown />
+                   <livewire:search-dropdown />
                     <div class="flex items-center lg:hidden">
                         <!-- Mobile menu button -->
                         <button
@@ -95,15 +95,15 @@
     <div class="h-96"></div>
     <div class="h-96"></div>
 
-    <hr>
+    <hr>--}}
 
-    <div class="my-8">
+    {{--<div class="my-8">
         <h2 class="text-lg font-semibold mt-4">Livewire Data Tables</h2>
 
         <livewire:data-tables />
     </div>
 
-    <hr>
+    <hr>--}}
 
     <div class="my-8">
         <h2 class="text-lg font-semibold mt-4">Livewire Blog Posts w/ Comments</h2>
@@ -124,7 +124,7 @@
         <h2 class="text-lg font-semibold mt-4">Polling Example</h2>
 
         <div class="mt-4">
-            <livewire:poll-example />
+            {{--<livewire:poll-example />--}}
         </div>
     </div>
 
@@ -134,7 +134,7 @@
         <h2 class="text-lg font-semibold mt-4">Events Example with Tags</h2>
 
         <div class="mt-4">
-            <livewire:tags-component />
+            {{--<livewire:tags-component />--}}
             <div class="h-96"></div>
         </div>
     </div>

@@ -12,7 +12,7 @@ COPY resources/ /app/resources/
 WORKDIR /app
 RUN npm install && npm run production
 
-FROM php:7.3.10-apache-stretch
+FROM php:7.4.10-apache-stretch
 RUN docker-php-ext-install  pdo_mysql
 
 ARG uid

@@ -6,42 +6,42 @@ use App\Models\Post;
 use App\Models\Comment;
 use Livewire\Component;
 
-class CommentsSection extends Component
-{
-    public $post;
+class CommentsSection extends Component {
+
+    public /*Post */$post;
     public $comment;
     public $successMessage;
 
     protected $rules = [
         'comment' => 'required|min:4',
-        'post' => 'required',
+        'post'    => 'required',
     ];
 
-    public function mount(Post $post)
-    {
+    // equivalent of a constructor
+    // but not necessary as Livewire is smart enough to assign the value passed in to the public property based on the name
+    public function mount(Post $post){
         $this->post = $post;
     }
 
-    public function postComment()
-    {
+    public function postComment(){
         $this->validate();
 
         sleep(1);
         Comment::create([
-            'post_id' => $this->post->id,
+            'post_id'  => $this->post->id,
             'username' => 'Guest',
-            'content' => $this->comment,
+            'content'  => $this->comment,
         ]);
 
         $this->comment = '';
 
-        $this->post = Post::find($this->post->id);
+        //$this->post = Post::find($this->post->id);
+        $this->post->refresh();
 
-        $this->successMessage =  'Comment was posted!';
+        $this->successMessage = 'Comment was posted!';
     }
 
-    public function render()
-    {
+    public function render(){
         return view('livewire.comments-section');
     }
 }

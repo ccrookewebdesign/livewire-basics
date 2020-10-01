@@ -38,7 +38,6 @@ class ContactForm extends Component
         Mail::to('andre@andre.com')->send(new ContactFormMailable($contact));
 
         $this->successMessage = 'We received your message successfully and will get back to you shortly!';
-        // session()->flash('success_message', 'We received your message successfully and will get back to you shortly!');
 
         $this->resetForm();
     }

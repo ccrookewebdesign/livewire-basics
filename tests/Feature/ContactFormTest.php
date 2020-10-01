@@ -12,7 +12,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ContactFormTest extends TestCase
 {
-    use RefreshDatabase;
+    //use RefreshDatabase;
 
     /** @test */
     public function main_page_contains_contact_form_livewire_component()

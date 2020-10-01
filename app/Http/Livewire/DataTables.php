@@ -6,42 +6,40 @@ use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class DataTables extends Component
-{
+class DataTables extends Component {
+
     use WithPagination;
 
     public $active = true;
     public $search;
-    public $sortField;
+    public $sortField = 'name';
     public $sortAsc = true;
     protected $queryString = ['search', 'active', 'sortAsc', 'sortField'];
 
-    public function sortBy($field)
-    {
-        if ($this->sortField === $field) {
+    public function sortBy($field){
+        if($this->sortField === $field){
             $this->sortAsc = !$this->sortAsc;
-        } else {
+        }
+        else {
             $this->sortAsc = true;
         }
 
         $this->sortField = $field;
     }
 
-    public function updatingSearch()
-    {
+    public function updatingSearch(){
         $this->resetPage();
     }
 
-    public function render()
-    {
+    public function render(){
         return view('livewire.data-tables', [
-            'users' => User::where(function ($query) {
+            'users' => User::where(function($query){
                 $query->where('name', 'like', '%' . $this->search . '%')
                     ->orWhere('email', 'like', '%' . $this->search . '%');
             })->where('active', $this->active)
-            ->when($this->sortField, function ($query) {
-                $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
-            })->paginate(10),
+                ->when($this->sortField, function($query){
+                    $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
+                })->paginate(10),
         ]);
     }
 
